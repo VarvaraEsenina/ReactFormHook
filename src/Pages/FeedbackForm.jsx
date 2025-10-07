@@ -1,5 +1,6 @@
 import React from 'react'
 import { useForm } from "react-hook-form"
+import * as motion from "motion/react-client"
 
 let count = 0;
 export default function FeedbackForm() {
@@ -29,7 +30,7 @@ export default function FeedbackForm() {
                         required: {
                             value: true,
                             message: "Поле Фамилия обязательно для заполнения"
-                        }, 
+                        },
                         minLength: {
                             value: 4,
                             message: "Минимальное кол-во символов -4 "
@@ -69,8 +70,9 @@ export default function FeedbackForm() {
                 </div>
 
                 <div className='mb-3'>
-                    <button className='btn btn-outline-primary' type='submit'>Отправить
-                    </button>
+                    <motion.button whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }} className='btn btn-outline-primary' type='submit'>Отправить
+                    </motion.button>
                 </div>
 
             </form>
